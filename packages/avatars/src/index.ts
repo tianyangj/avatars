@@ -37,10 +37,10 @@ export default class Avatars<O> {
    *
    * @param seed
    */
-  public create(seed: string, options?: O & Options) {
+  public create(seed: string, options?: O & Options, genes?: number[]) {
     options = { ...this.defaultOptions, ...options };
 
-    let svg = this.spriteCollection(new Random(seed), options);
+    let svg = this.spriteCollection(new Random(seed, genes), options);
 
     if (options) {
       svg = Parser.parse(svg);
