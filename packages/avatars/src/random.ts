@@ -21,12 +21,21 @@ export default class Random {
       console.log('bool(prng)', temp);
       return temp;
     } else {
-      const temp = Boolean(this.genes[this.genesIndex++]);
-      console.log('bool(genes)', temp);
-      if (!temp) {
+      if (this.genesIndex === 0) {
+        // position first always determines gender, either male = 1 or female = 0
+        const temp = Boolean(this.genes[this.genesIndex]);
+        console.log('bool(genes)', temp);
         this.genesIndex++;
+        return temp;
+      } else {
+        // position afterwards should always follow bool => pickone sequence if not null
+        if (this.genes[this.genesIndex] === null) {
+          this.genesIndex++;
+          return false;
+        } else {
+          return true;
+        }
       }
-      return temp;
     }
   }
 
