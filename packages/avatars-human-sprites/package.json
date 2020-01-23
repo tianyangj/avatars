@@ -31,8 +31,8 @@
   },
   "homepage": "https://github.com/DiceBear/avatars/tree/master/packages/avatars-human-sprites#readme",
   "dependencies": {
-    "@dicebear/avatars-female-sprites": "^4.0.2",
-    "@dicebear/avatars-male-sprites": "^4.0.2"
+    "@dicebear/avatars-female-sprites": "../avatars-female-sprites",
+    "@dicebear/avatars-male-sprites": "../avatars-male-sprites"
   },
   "peerDependencies": {
     "@dicebear/avatars": "^4.0.0"
