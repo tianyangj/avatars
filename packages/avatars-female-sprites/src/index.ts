@@ -5,53 +5,66 @@ type Options = {
   mood?: Array<'happy' | 'sad' | 'surprised'>;
 };
 
-export default function(random: Random, options: Options = {}) {
+export default function (random: Random, options: Options = {}) {
   let skinColor = random.pickone([
-    new Color('#FFDBAC'),
-    new Color('#F5CFA0'),
-    new Color('#EAC393'),
-    new Color('#E0B687'),
-    new Color('#CB9E6E'),
-    new Color('#B68655'),
-    new Color('#A26D3D'),
-    new Color('#8D5524')
+    new Color(Color.html.BROWN.CORNSILK),
+    new Color(Color.html.BROWN.BLANCHEDALMOND),
+    new Color(Color.html.BROWN.BISQUE),
+    new Color(Color.html.BROWN.NAVAJOWHITE),
+    new Color(Color.html.BROWN.WHEAT),
+    new Color(Color.html.BROWN.BURLYWOOD),
+    new Color(Color.html.BROWN.TAN),
+    new Color(Color.html.BROWN.ROSYBROWN),
+    new Color(Color.html.BROWN.SANDYBROWN),
+    new Color(Color.html.BROWN.GOLDENROD),
+    new Color(Color.html.BROWN.DARKGOLDENROD),
+    new Color(Color.html.BROWN.PERU),
+    new Color(Color.html.BROWN.CHOCOLATE),
+    new Color(Color.html.BROWN.SADDLEBROWN),
+    new Color(Color.html.BROWN.SIENNA),
+    new Color(Color.html.BROWN.BROWN),
+    new Color(Color.html.BROWN.MAROON),
   ]);
 
-  let hairColor = random
-    .pickone([
-      new Color('#090806'),
-      new Color('#2c222b'),
-      new Color('#71635a'),
-      new Color('#b7a69e'),
-      new Color('#d6c4c2'),
-      new Color('#cabfb1'),
-      new Color('#dcd0ba'),
-      new Color('#fff5e1'),
-      new Color('#e6cea8'),
-      new Color('#e5c8a8'),
-      new Color('#debc99'),
-      new Color('#b89778'),
-      new Color('#a56b46'),
-      new Color('#b55239'),
-      new Color('#8d4a43'),
-      new Color('#91553d'),
-      new Color('#533d32'),
-      new Color('#3b3024'),
-      new Color('#554838'),
-      new Color('#4e433f'),
-      new Color('#504444'),
-      new Color('#6a4e42'),
-      new Color('#a7856a'),
-      new Color('#977961')
-    ])
-    .brighterOrDarkerThan(skinColor, 17);
+  let hairColor = random.pickone([
+    new Color(Color.html.GRAY.GAINSBORO),
+    new Color(Color.html.GRAY.LIGHTGRAY),
+    new Color(Color.html.GRAY.SILVER),
+    new Color(Color.html.GRAY.DARKGRAY),
+    new Color(Color.html.GRAY.GRAY),
+    new Color(Color.html.GRAY.DIMGRAY),
+    new Color(Color.html.GRAY.LIGHTSLATEGRAY),
+    new Color(Color.html.GRAY.SLATEGRAY),
+    new Color(Color.html.GRAY.DARKSLATEGRAY),
+    new Color(Color.html.GRAY.BLACK),
+  ]);
 
   let eyesColor = random.pickone([
-    new Color('#76778b'),
-    new Color('#697b94'),
-    new Color('#647b90'),
-    new Color('#5b7c8b'),
-    new Color('#588387')
+    new Color(Color.html.BLUE.AQUA),
+    new Color(Color.html.BLUE.CYAN),
+    new Color(Color.html.BLUE.LIGHTCYAN),
+    new Color(Color.html.BLUE.PALETURQUOISE),
+    new Color(Color.html.BLUE.AQUAMARINE),
+    new Color(Color.html.BLUE.TURQUOISE),
+    new Color(Color.html.BLUE.MEDIUMTURQUOISE),
+    new Color(Color.html.BLUE.DARKTURQUOISE),
+    new Color(Color.html.BLUE.CADETBLUE),
+    new Color(Color.html.BLUE.STEELBLUE),
+    new Color(Color.html.BLUE.LIGHTSTEELBLUE),
+    new Color(Color.html.BLUE.POWDERBLUE),
+    new Color(Color.html.BLUE.LIGHTBLUE),
+    new Color(Color.html.BLUE.SKYBLUE),
+    new Color(Color.html.BLUE.LIGHTSKYBLUE),
+    new Color(Color.html.BLUE.DEEPSKYBLUE),
+    new Color(Color.html.BLUE.DODGERBLUE),
+    new Color(Color.html.BLUE.CORNFLOWERBLUE),
+    new Color(Color.html.BLUE.MEDIUMSLATEBLUE),
+    new Color(Color.html.BLUE.ROYALBLUE),
+    new Color(Color.html.BLUE.BLUE),
+    new Color(Color.html.BLUE.MEDIUMBLUE),
+    new Color(Color.html.BLUE.DARKBLUE),
+    new Color(Color.html.BLUE.NAVY),
+    new Color(Color.html.BLUE.MIDNIGHTBLUE),
   ]);
 
   let eyebrowsColor = hairColor
@@ -60,58 +73,86 @@ export default function(random: Random, options: Options = {}) {
     .darkerThan(hairColor, 10);
 
   let accessoriesColor = random.pickone([
-    new Color('#daa520'),
-    new Color('#ffd700'),
-    new Color('#eee8aa'),
-    new Color('#fafad2'),
-    new Color('#d3d3d3'),
-    new Color('#a9a9a9')
+    new Color(Color.html.PINK.PINK),
+    new Color(Color.html.PINK.LIGHTPINK),
+    new Color(Color.html.PINK.HOTPINK),
+    new Color(Color.html.PINK.DEEPPINK),
+    new Color(Color.html.PINK.MEDIUMVIOLETRED),
+    new Color(Color.html.PINK.PALEVIOLETRED),
   ]);
 
-  let mouthColor = random
-    .pickone([
-      new Color('#dbac98'),
-      new Color('#d29985'),
-      new Color('#c98276'),
-      new Color('#e35d6a'),
-      new Color('#e32153'),
-      new Color('#de0f0d')
-    ])
-    .brighterOrDarkerThan(skinColor, 10);
+  let mouthColor = random.pickone([
+    new Color(Color.html.RED.INDIANRED),
+    new Color(Color.html.RED.LIGHTSALMON),
+    new Color(Color.html.RED.SALMON),
+    new Color(Color.html.RED.DARKSALMON),
+    new Color(Color.html.RED.LIGHTSALMON),
+    new Color(Color.html.RED.CRIMSON),
+    new Color(Color.html.RED.RED),
+    new Color(Color.html.RED.FIREBRICK),
+    new Color(Color.html.RED.DARKRED),
+  ]);
 
   let glassesColor = random.pickone([
-    new Color('#5f705c'),
-    new Color('#43677d'),
-    new Color('#5e172d'),
-    new Color('#ffb67a'),
-    new Color('#a04b5d'),
-    new Color('#191919'),
-    new Color('#323232'),
-    new Color('#4b4b4b')
+    new Color(Color.html.YELLOW.GOLD),
+    new Color(Color.html.YELLOW.YELLOW),
+    new Color(Color.html.YELLOW.LIGHTYELLOW),
+    new Color(Color.html.YELLOW.LEMONCHIFFON),
+    new Color(Color.html.YELLOW.LIGHTGOLDENRODYELLOW),
+    new Color(Color.html.YELLOW.PAPAYAWHIP),
+    new Color(Color.html.YELLOW.MOCCASIN),
+    new Color(Color.html.YELLOW.PEACHPUFF),
+    new Color(Color.html.YELLOW.PALEGOLDENROD),
+    new Color(Color.html.YELLOW.KHAKI),
+    new Color(Color.html.YELLOW.DARKKHAKI),
   ]);
 
   let clothesColor = random.pickone([
-    new Color('#d11141'),
-    new Color('#00b159'),
-    new Color('#00aedb'),
-    new Color('#f37735'),
-    new Color('#ffc425'),
-    new Color('#740001'),
-    new Color('#ae0001'),
-    new Color('#eeba30'),
-    new Color('#96ceb4'),
-    new Color('#ffeead'),
-    new Color('#ff6f69'),
-    new Color('#ffcc5c'),
-    new Color('#88d8b0')
+    new Color(Color.html.GREEN.GREENYELLOW),
+    new Color(Color.html.GREEN.CHARTREUSE),
+    new Color(Color.html.GREEN.LAWNGREEN),
+    new Color(Color.html.GREEN.LIME),
+    new Color(Color.html.GREEN.LIMEGREEN),
+    new Color(Color.html.GREEN.PALEGREEN),
+    new Color(Color.html.GREEN.LIGHTGREEN),
+    new Color(Color.html.GREEN.MEDIUMSPRINGGREEN),
+    new Color(Color.html.GREEN.SPRINGGREEN),
+    new Color(Color.html.GREEN.MEDIUMSEAGREEN),
+    new Color(Color.html.GREEN.SEAGREEN),
+    new Color(Color.html.GREEN.FORESTGREEN),
+    new Color(Color.html.GREEN.GREEN),
+    new Color(Color.html.GREEN.DARKGREEN),
+    new Color(Color.html.GREEN.YELLOWGREEN),
+    new Color(Color.html.GREEN.OLIVEDRAB),
+    new Color(Color.html.GREEN.OLIVE),
+    new Color(Color.html.GREEN.DARKOLIVEGREEN),
+    new Color(Color.html.GREEN.MEDIUMAQUAMARINE),
+    new Color(Color.html.GREEN.DARKSEAGREEN),
+    new Color(Color.html.GREEN.LIGHTSEAGREEN),
+    new Color(Color.html.GREEN.DARKCYAN),
+    new Color(Color.html.GREEN.TEAL),
   ]);
 
   let hatColor = random.pickone([
-    new Color('#cc6192'),
-    new Color('#2663a3'),
-    new Color('#a62116'),
-    new Color('#3d8a6b'),
-    new Color('#614f8a')
+    new Color(Color.html.PURPLE.LAVENDER),
+    new Color(Color.html.PURPLE.THISTLE),
+    new Color(Color.html.PURPLE.PLUM),
+    new Color(Color.html.PURPLE.VIOLET),
+    new Color(Color.html.PURPLE.ORCHID),
+    new Color(Color.html.PURPLE.FUCHSIA),
+    new Color(Color.html.PURPLE.MAGENTA),
+    new Color(Color.html.PURPLE.MEDIUMORCHID),
+    new Color(Color.html.PURPLE.MEDIUMPURPLE),
+    new Color(Color.html.PURPLE.REBECCAPURPLE),
+    new Color(Color.html.PURPLE.BLUEVIOLET),
+    new Color(Color.html.PURPLE.DARKVIOLET),
+    new Color(Color.html.PURPLE.DARKORCHID),
+    new Color(Color.html.PURPLE.DARKMAGENTA),
+    new Color(Color.html.PURPLE.PURPLE),
+    new Color(Color.html.PURPLE.INDIGO),
+    new Color(Color.html.PURPLE.SLATEBLUE),
+    new Color(Color.html.PURPLE.DARKSLATEBLUE),
+    new Color(Color.html.PURPLE.MEDIUMSLATEBLUE),
   ]);
 
   let mouth = [];
@@ -233,20 +274,20 @@ export default function(random: Random, options: Options = {}) {
     // Hair (100% chance)
     random.bool(100)
       ? random.pickone([
-          `<path d="M2 9v6h2v-4H3V9H2zm0-2h2V4h12v3h2V3h-1V2H3v1H2v4zm15 2h1v6h-2v-4h1V9z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
-          `<path d="M4 12h1v1H3V4h1V3h1V2h10v1h1v1h1v9h-2v-1h1V5H4v7z" fill="${hairColor.hex}"/>`,
-          `<path d="M2 17h2v-1h4v-2H6v-1H5v-1H4V4h1V3h1v1h1V3h1v1h1V3h6v1h1v8h-1v1h-1v1h-2v2h4v1h2V3h-1V2h-1V1H4v1H3v1H2v14z" fill="${hairColor.hex}"/>`,
-          `<path d="M2 13V9h1v2h1v1h1v1H2zm15-4h1v4h-3v-1h1v-1h1V9zM2 7h1V4h1V3h1V2h10v1h1v1h1v3h1V3h-1V2h-1V1H4v1H3v1H2v4z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
-          `<path d="M2 14h2V4h12v10h2V3h-1V2h-1V1H4v1H3v1H2v11z" fill="${hairColor.hex}"/>`,
-          `<path d="M2 14h2V7h1V6h1V5h1V4h1V3h6v1h1v1h1v9h2V3h-1V2h-1V1H4v1H3v1H2v11z" fill="${hairColor.hex}"/>`,
-          `<path d="M3 4v3h1V4h2v1h1V4h1v1h1V4h7v3h1V4h1V2h-1V1h-2v1H5V1H3v1H2v2h1z" fill="${hairColor.hex}"/>`,
-          `<path d="M2 10h1V8h1V7h1V6h1V5h1V4h7v1h3V4h-1V3h-1V2H4v1H3v1H2v6z" fill="${hairColor.hex}"/>`,
-          `<path d="M1 17h3v-1h4v-2H6v-1H5v-1H4v-1H3V9H2V7h1V5h1V4h7V3h1v1h1V3h1v1h1V3h1v2h1v2h1v2h-1v2h-1v1h-1v1h-1v1h-2v2h4v1h3V4h-1V3h-1V2h-1V1H4v1H3v1H2v1H1v13z" fill="${hairColor.hex}"/>`,
-          `<path d="M2 13h3v-1H4v-1H3V9H2v4zm13 0h3V9h-1v2h-1v1h-1v1zm2-6h1V3h-1V2h-1V1H4v1H3v1H2v4h1V5h1V4h1V3h1V2h8v1h1v1h1v1h1v2z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
-          `<path d="M2 9v3h1v1H2v2H1v1h1v-1h1v-1h1v-1h1v-1H4v-1H3V9H2zm0-2h1V6h1V5h2V4h9v1h1v1h1v1h1V3h-1V2h-1V1H4v1H3v1H2v4z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
-          `<path d="M1 15h5v-2H5v-1H4v-1H3V6h2V5h2V4h1V3h6v1h1v1h1v1h1v5h-1v1h-1v1h-1v2h5V4h-1V3h-1V2h-1V1H4v1H3v1H2v1H1v11z" fill="${hairColor.hex}"/>`,
-          `<path d="M2 9v3h1v1H2v2H1v1h1v-1h1v-1h1v-1h1v-1H4v-1H3V9H2zm16 0v3h-1v1h1v2h1v1h-1v-1h-1v-1h-1v-1h-1v-1h1v-1h1V9h1zm-1-2h1V3h-1V2h-1V1H4v1H3v1H2v4h1V6h1V5h2V4h9v1h1v1h1v1z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
-        ])
+        `<path d="M2 9v6h2v-4H3V9H2zm0-2h2V4h12v3h2V3h-1V2H3v1H2v4zm15 2h1v6h-2v-4h1V9z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
+        `<path d="M4 12h1v1H3V4h1V3h1V2h10v1h1v1h1v9h-2v-1h1V5H4v7z" fill="${hairColor.hex}"/>`,
+        `<path d="M2 17h2v-1h4v-2H6v-1H5v-1H4V4h1V3h1v1h1V3h1v1h1V3h6v1h1v8h-1v1h-1v1h-2v2h4v1h2V3h-1V2h-1V1H4v1H3v1H2v14z" fill="${hairColor.hex}"/>`,
+        `<path d="M2 13V9h1v2h1v1h1v1H2zm15-4h1v4h-3v-1h1v-1h1V9zM2 7h1V4h1V3h1V2h10v1h1v1h1v3h1V3h-1V2h-1V1H4v1H3v1H2v4z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
+        `<path d="M2 14h2V4h12v10h2V3h-1V2h-1V1H4v1H3v1H2v11z" fill="${hairColor.hex}"/>`,
+        `<path d="M2 14h2V7h1V6h1V5h1V4h1V3h6v1h1v1h1v9h2V3h-1V2h-1V1H4v1H3v1H2v11z" fill="${hairColor.hex}"/>`,
+        `<path d="M3 4v3h1V4h2v1h1V4h1v1h1V4h7v3h1V4h1V2h-1V1h-2v1H5V1H3v1H2v2h1z" fill="${hairColor.hex}"/>`,
+        `<path d="M2 10h1V8h1V7h1V6h1V5h1V4h7v1h3V4h-1V3h-1V2H4v1H3v1H2v6z" fill="${hairColor.hex}"/>`,
+        `<path d="M1 17h3v-1h4v-2H6v-1H5v-1H4v-1H3V9H2V7h1V5h1V4h7V3h1v1h1V3h1v1h1V3h1v2h1v2h1v2h-1v2h-1v1h-1v1h-1v1h-2v2h4v1h3V4h-1V3h-1V2h-1V1H4v1H3v1H2v1H1v13z" fill="${hairColor.hex}"/>`,
+        `<path d="M2 13h3v-1H4v-1H3V9H2v4zm13 0h3V9h-1v2h-1v1h-1v1zm2-6h1V3h-1V2h-1V1H4v1H3v1H2v4h1V5h1V4h1V3h1V2h8v1h1v1h1v1h1v2z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
+        `<path d="M2 9v3h1v1H2v2H1v1h1v-1h1v-1h1v-1h1v-1H4v-1H3V9H2zm0-2h1V6h1V5h2V4h9v1h1v1h1v1h1V3h-1V2h-1V1H4v1H3v1H2v4z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
+        `<path d="M1 15h5v-2H5v-1H4v-1H3V6h2V5h2V4h1V3h6v1h1v1h1v1h1v5h-1v1h-1v1h-1v2h5V4h-1V3h-1V2h-1V1H4v1H3v1H2v1H1v11z" fill="${hairColor.hex}"/>`,
+        `<path d="M2 9v3h1v1H2v2H1v1h1v-1h1v-1h1v-1h1v-1H4v-1H3V9H2zm16 0v3h-1v1h1v2h1v1h-1v-1h-1v-1h-1v-1h-1v-1h1v-1h1V9h1zm-1-2h1V3h-1V2h-1V1H4v1H3v1H2v4h1V6h1V5h2V4h9v1h1v1h1v1z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
+      ])
       : '',
     // Hat (5% chance)
     random.bool(5)

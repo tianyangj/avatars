@@ -5,46 +5,66 @@ type Options = {
   mood?: Array<'happy' | 'sad' | 'surprised'>;
 };
 
-export default function(random: Random, options: Options = {}) {
+export default function (random: Random, options: Options = {}) {
   let skinColor = random.pickone([
-    new Color('#FFDBAC'),
-    new Color('#F5CFA0'),
-    new Color('#EAC393'),
-    new Color('#E0B687'),
-    new Color('#CB9E6E'),
-    new Color('#B68655'),
-    new Color('#A26D3D'),
-    new Color('#8D5524')
+    new Color(Color.html.BROWN.CORNSILK),
+    new Color(Color.html.BROWN.BLANCHEDALMOND),
+    new Color(Color.html.BROWN.BISQUE),
+    new Color(Color.html.BROWN.NAVAJOWHITE),
+    new Color(Color.html.BROWN.WHEAT),
+    new Color(Color.html.BROWN.BURLYWOOD),
+    new Color(Color.html.BROWN.TAN),
+    new Color(Color.html.BROWN.ROSYBROWN),
+    new Color(Color.html.BROWN.SANDYBROWN),
+    new Color(Color.html.BROWN.GOLDENROD),
+    new Color(Color.html.BROWN.DARKGOLDENROD),
+    new Color(Color.html.BROWN.PERU),
+    new Color(Color.html.BROWN.CHOCOLATE),
+    new Color(Color.html.BROWN.SADDLEBROWN),
+    new Color(Color.html.BROWN.SIENNA),
+    new Color(Color.html.BROWN.BROWN),
+    new Color(Color.html.BROWN.MAROON),
   ]);
 
-  let hairColor = random
-    .pickone([
-      new Color('#090806'),
-      new Color('#2c222b'),
-      new Color('#71635a'),
-      new Color('#b7a69e'),
-      new Color('#b89778'),
-      new Color('#a56b46'),
-      new Color('#b55239'),
-      new Color('#8d4a43'),
-      new Color('#91553d'),
-      new Color('#533d32'),
-      new Color('#3b3024'),
-      new Color('#554838'),
-      new Color('#4e433f'),
-      new Color('#504444'),
-      new Color('#6a4e42'),
-      new Color('#a7856a'),
-      new Color('#977961')
-    ])
-    .brighterOrDarkerThan(skinColor, 17);
+  let hairColor = random.pickone([
+    new Color(Color.html.GRAY.GAINSBORO),
+    new Color(Color.html.GRAY.LIGHTGRAY),
+    new Color(Color.html.GRAY.SILVER),
+    new Color(Color.html.GRAY.DARKGRAY),
+    new Color(Color.html.GRAY.GRAY),
+    new Color(Color.html.GRAY.DIMGRAY),
+    new Color(Color.html.GRAY.LIGHTSLATEGRAY),
+    new Color(Color.html.GRAY.SLATEGRAY),
+    new Color(Color.html.GRAY.DARKSLATEGRAY),
+    new Color(Color.html.GRAY.BLACK),
+  ]);
 
   let eyesColor = random.pickone([
-    new Color('#76778b'),
-    new Color('#697b94'),
-    new Color('#647b90'),
-    new Color('#5b7c8b'),
-    new Color('#588387')
+    new Color(Color.html.BLUE.AQUA),
+    new Color(Color.html.BLUE.CYAN),
+    new Color(Color.html.BLUE.LIGHTCYAN),
+    new Color(Color.html.BLUE.PALETURQUOISE),
+    new Color(Color.html.BLUE.AQUAMARINE),
+    new Color(Color.html.BLUE.TURQUOISE),
+    new Color(Color.html.BLUE.MEDIUMTURQUOISE),
+    new Color(Color.html.BLUE.DARKTURQUOISE),
+    new Color(Color.html.BLUE.CADETBLUE),
+    new Color(Color.html.BLUE.STEELBLUE),
+    new Color(Color.html.BLUE.LIGHTSTEELBLUE),
+    new Color(Color.html.BLUE.POWDERBLUE),
+    new Color(Color.html.BLUE.LIGHTBLUE),
+    new Color(Color.html.BLUE.SKYBLUE),
+    new Color(Color.html.BLUE.LIGHTSKYBLUE),
+    new Color(Color.html.BLUE.DEEPSKYBLUE),
+    new Color(Color.html.BLUE.DODGERBLUE),
+    new Color(Color.html.BLUE.CORNFLOWERBLUE),
+    new Color(Color.html.BLUE.MEDIUMSLATEBLUE),
+    new Color(Color.html.BLUE.ROYALBLUE),
+    new Color(Color.html.BLUE.BLUE),
+    new Color(Color.html.BLUE.MEDIUMBLUE),
+    new Color(Color.html.BLUE.DARKBLUE),
+    new Color(Color.html.BLUE.NAVY),
+    new Color(Color.html.BLUE.MIDNIGHTBLUE),
   ]);
 
   let eyebrowsColor = hairColor
@@ -52,47 +72,87 @@ export default function(random: Random, options: Options = {}) {
     .darkerThan(skinColor, 7)
     .darkerThan(hairColor, 10);
 
-  let mustacheColor = hairColor.clone().darkerThan(skinColor, 7);
-  mustacheColor.alpha = random.pickone([1, 0.75, 0.5]);
+  let mustacheColor = random.pickone([
+    new Color(Color.html.ORANGE.LIGHTSALMON),
+    new Color(Color.html.ORANGE.CORAL),
+    new Color(Color.html.ORANGE.TOMATO),
+    new Color(Color.html.ORANGE.ORANGERED),
+    new Color(Color.html.ORANGE.DARKORANGE),
+    new Color(Color.html.ORANGE.ORANGE),
+  ]);
 
-  let mouthColor = random
-    .pickone([new Color('#eec1ad'), new Color('#dbac98'), new Color('#d29985')])
-    .brighterOrDarkerThan(skinColor, 10);
+  let mouthColor = random.pickone([
+    new Color(Color.html.RED.INDIANRED),
+    new Color(Color.html.RED.LIGHTSALMON),
+    new Color(Color.html.RED.SALMON),
+    new Color(Color.html.RED.DARKSALMON),
+    new Color(Color.html.RED.LIGHTSALMON),
+    new Color(Color.html.RED.CRIMSON),
+    new Color(Color.html.RED.RED),
+    new Color(Color.html.RED.FIREBRICK),
+    new Color(Color.html.RED.DARKRED),
+  ]);
 
   let glassesColor = random.pickone([
-    new Color('#5f705c'),
-    new Color('#43677d'),
-    new Color('#5e172d'),
-    new Color('#ffb67a'),
-    new Color('#a04b5d'),
-    new Color('#191919'),
-    new Color('#323232'),
-    new Color('#4b4b4b')
+    new Color(Color.html.YELLOW.GOLD),
+    new Color(Color.html.YELLOW.YELLOW),
+    new Color(Color.html.YELLOW.LIGHTYELLOW),
+    new Color(Color.html.YELLOW.LEMONCHIFFON),
+    new Color(Color.html.YELLOW.LIGHTGOLDENRODYELLOW),
+    new Color(Color.html.YELLOW.PAPAYAWHIP),
+    new Color(Color.html.YELLOW.MOCCASIN),
+    new Color(Color.html.YELLOW.PEACHPUFF),
+    new Color(Color.html.YELLOW.PALEGOLDENROD),
+    new Color(Color.html.YELLOW.KHAKI),
+    new Color(Color.html.YELLOW.DARKKHAKI),
   ]);
 
   let clothesColor = random.pickone([
-    new Color('#5bc0de'),
-    new Color('#5cb85c'),
-    new Color('#428bca'),
-    new Color('#03396c'),
-    new Color('#005b96'),
-    new Color('#6497b1'),
-    new Color('#1b85b8'),
-    new Color('#5a5255'),
-    new Color('#559e83'),
-    new Color('#ae5a41'),
-    new Color('#c3cb71'),
-    new Color('#666547'),
-    new Color('#ffe28a')
+    new Color(Color.html.GREEN.GREENYELLOW),
+    new Color(Color.html.GREEN.CHARTREUSE),
+    new Color(Color.html.GREEN.LAWNGREEN),
+    new Color(Color.html.GREEN.LIME),
+    new Color(Color.html.GREEN.LIMEGREEN),
+    new Color(Color.html.GREEN.PALEGREEN),
+    new Color(Color.html.GREEN.LIGHTGREEN),
+    new Color(Color.html.GREEN.MEDIUMSPRINGGREEN),
+    new Color(Color.html.GREEN.SPRINGGREEN),
+    new Color(Color.html.GREEN.MEDIUMSEAGREEN),
+    new Color(Color.html.GREEN.SEAGREEN),
+    new Color(Color.html.GREEN.FORESTGREEN),
+    new Color(Color.html.GREEN.GREEN),
+    new Color(Color.html.GREEN.DARKGREEN),
+    new Color(Color.html.GREEN.YELLOWGREEN),
+    new Color(Color.html.GREEN.OLIVEDRAB),
+    new Color(Color.html.GREEN.OLIVE),
+    new Color(Color.html.GREEN.DARKOLIVEGREEN),
+    new Color(Color.html.GREEN.MEDIUMAQUAMARINE),
+    new Color(Color.html.GREEN.DARKSEAGREEN),
+    new Color(Color.html.GREEN.LIGHTSEAGREEN),
+    new Color(Color.html.GREEN.DARKCYAN),
+    new Color(Color.html.GREEN.TEAL),
   ]);
 
   let hatColor = random.pickone([
-    new Color('#18293b'),
-    new Color('#2e1e05'),
-    new Color('#989789'),
-    new Color('#3d6ba7'),
-    new Color('#517459'),
-    new Color('#a62116')
+    new Color(Color.html.PURPLE.LAVENDER),
+    new Color(Color.html.PURPLE.THISTLE),
+    new Color(Color.html.PURPLE.PLUM),
+    new Color(Color.html.PURPLE.VIOLET),
+    new Color(Color.html.PURPLE.ORCHID),
+    new Color(Color.html.PURPLE.FUCHSIA),
+    new Color(Color.html.PURPLE.MAGENTA),
+    new Color(Color.html.PURPLE.MEDIUMORCHID),
+    new Color(Color.html.PURPLE.MEDIUMPURPLE),
+    new Color(Color.html.PURPLE.REBECCAPURPLE),
+    new Color(Color.html.PURPLE.BLUEVIOLET),
+    new Color(Color.html.PURPLE.DARKVIOLET),
+    new Color(Color.html.PURPLE.DARKORCHID),
+    new Color(Color.html.PURPLE.DARKMAGENTA),
+    new Color(Color.html.PURPLE.PURPLE),
+    new Color(Color.html.PURPLE.INDIGO),
+    new Color(Color.html.PURPLE.SLATEBLUE),
+    new Color(Color.html.PURPLE.DARKSLATEBLUE),
+    new Color(Color.html.PURPLE.MEDIUMSLATEBLUE),
   ]);
 
   let mouth = [];
@@ -101,30 +161,30 @@ export default function(random: Random, options: Options = {}) {
     if (false === Array.isArray(options.mood) || options.mood.indexOf('sad') > -1) {
       // prettier-ignore
       mouth.push(
-          `<path d="M8 13h3v1H8v-1z" fill="${mouthColor.hex}"/>`,
-          `<path d="M8 13h4v1H8v-1z" fill="${mouthColor.hex}"/>`,
-          `<path d="M9 13h2v1H9v-1z" fill="${mouthColor.hex}"/>`,
-          `<path d="M8 12v1h3v1h1v-1h-1v-1H8z" fill="${mouthColor.hex}"/>`,
-          `<path d="M8 13v1h1v-1h3v-1H9v1H8z" fill="${mouthColor.hex}"/>`
-        );
+        `<path d="M8 13h3v1H8v-1z" fill="${mouthColor.hex}"/>`,
+        `<path d="M8 13h4v1H8v-1z" fill="${mouthColor.hex}"/>`,
+        `<path d="M9 13h2v1H9v-1z" fill="${mouthColor.hex}"/>`,
+        `<path d="M8 12v1h3v1h1v-1h-1v-1H8z" fill="${mouthColor.hex}"/>`,
+        `<path d="M8 13v1h1v-1h3v-1H9v1H8z" fill="${mouthColor.hex}"/>`
+      );
     }
 
     if (false === Array.isArray(options.mood) || options.mood.indexOf('happy') > -1) {
       // prettier-ignore
       mouth.push(
-          `<path d="M7 12v1h1v1h4v-1H8v-1H7z" fill="${mouthColor.hex}"/>`,
-          `<path d="M10 12v1H9v1h2v-2h-1z" fill="${mouthColor.hex}"/>`,
-          `<path d="M8 13v1h4v-1h1v-1h-1v1H8z" fill="${mouthColor.hex}"/>`,
-          `<path d="M8 12v2h4v-2H8z" fill="#FFF"/>`
-        );
+        `<path d="M7 12v1h1v1h4v-1H8v-1H7z" fill="${mouthColor.hex}"/>`,
+        `<path d="M10 12v1H9v1h2v-2h-1z" fill="${mouthColor.hex}"/>`,
+        `<path d="M8 13v1h4v-1h1v-1h-1v1H8z" fill="${mouthColor.hex}"/>`,
+        `<path d="M8 12v2h4v-2H8z" fill="#FFF"/>`
+      );
     }
 
     if (false === Array.isArray(options.mood) || options.mood.indexOf('surprised') > -1) {
       // prettier-ignore
       mouth.push(
-          `<path d="M9 12v2h2v-2H9z" fill="${mouthColor.hex}"/>`,
-          `<path d="M9 13v1h1v-1H9z" fill="${mouthColor.hex}"/>`
-        );
+        `<path d="M9 12v2h2v-2H9z" fill="${mouthColor.hex}"/>`,
+        `<path d="M9 13v1h1v-1H9z" fill="${mouthColor.hex}"/>`
+      );
     }
 
     if (mouth.length === 0) {
@@ -173,24 +233,24 @@ export default function(random: Random, options: Options = {}) {
     // Mustache (50% chance)
     random.bool(50)
       ? random.pickone([
-          `<path d="M3 10v3h1v1h1v1h10v-1h1v-1h1v-3h-3v1H6v-1H3z" id="Path" fill="${mustacheColor.hex}" fill-opacity="${mustacheColor.alpha}"/>`,
-          `<path d="M3 13h1v1h1v1h10v-1h1v-1h1v-3h-1v1h-1v1H5v-1H4v-1H3v3z" id="Path" fill="${mustacheColor.hex}" fill-opacity="${mustacheColor.alpha}"/>`,
-          `<path d="M3 11v2h1v1h1v1h10v-1h1v-1h1v-2H3z" id="Path" fill="${mustacheColor.hex}" fill-opacity="${mustacheColor.alpha}"/>`,
-          `<path d="M3 7v6h1v1h1v1h10v-1h1v-1h1V7h-1v2h-1v1h-1v1H6v-1H5V9H4V7H3z" id="Path" fill="${mustacheColor.hex}" fill-opacity="${mustacheColor.alpha}"/>`
-        ])
+        `<path d="M3 10v3h1v1h1v1h10v-1h1v-1h1v-3h-3v1H6v-1H3z" id="Path" fill="${mustacheColor.hex}" fill-opacity="${mustacheColor.alpha}"/>`,
+        `<path d="M3 13h1v1h1v1h10v-1h1v-1h1v-3h-1v1h-1v1H5v-1H4v-1H3v3z" id="Path" fill="${mustacheColor.hex}" fill-opacity="${mustacheColor.alpha}"/>`,
+        `<path d="M3 11v2h1v1h1v1h10v-1h1v-1h1v-2H3z" id="Path" fill="${mustacheColor.hex}" fill-opacity="${mustacheColor.alpha}"/>`,
+        `<path d="M3 7v6h1v1h1v1h10v-1h1v-1h1V7h-1v2h-1v1h-1v1H6v-1H5V9H4V7H3z" id="Path" fill="${mustacheColor.hex}" fill-opacity="${mustacheColor.alpha}"/>`
+      ])
       : '',
     // Mouth
     random.pickone(mouth),
     // Glasses (25% chance)
     random.bool(25)
       ? random.pickone([
-          `<path d="M5 7h3v3H5V7zm7 0h3v3h-3V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 7h1v1H7V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M12 10V7h3v3h-3zm-1-4v1H9V6H4v1H3v1h1v3h5V8h2v3h5V8h1V7h-1V6h-5zm-6 4V7h3v3H5z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M3 7h1v1H3V7zm6 0h2v1H9V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M5 7h3v2H5V7zm7 0h3v2h-3V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 7h1v1H7V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M5 7v2h3V7H5zM4 6v1H3v1h1v1h1v1h3V9h1V8h2v1h1v1h3V9h1V8h1V7h-1V6h-5v1H9V6H4zm8 1v2h3V7h-3z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M3 7h1v1H3V7zm6 0h2v1H9V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M5 8h3v1H5V8zm7 0h3v1h-3V8z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 8h1v1H7V8zm7 0h1v1h-1V8z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M5 8v1h3V8H5zM3 7v1h1v1h1v1h3V9h1V8h2v1h1v1h3V9h1V8h1V7H3zm9 1v1h3V8h-3z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M3 7v1h1V7H3zm6 0v1h2V7H9zm7 0v1h1V7h-1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M5 7h3v2H5V7zm7 0h3v2h-3V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 7h1v1H7V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M12 7v2h3V7h-3zM8 6H5v1H3v1h1v1h1v1h3V9h1V8h2v1h1v1h3V9h1V8h1V7h-2V6h-3v1H8V6zM5 7v2h3V7H5z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M3 7h1v1H3V7zm6 0h2v1H9V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M4 8H3V7h1V6h5v1h2V6h5v1h1v1h-1v2h-5V8H9v2H4V8zm1 0V7h3v2H5V8zm7-1v2h3V7h-3z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M5 7h3v2H5V7zm7 0h3v2h-3V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M14 7h1v1h-1V7zM7 7h1v1H7V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M3 8V7h1v1H3zm6-1v1h2V7H9zm7 0v1h1V7h-1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M4 8H3V7h14v1h-1v2h-5V8H9v2H4V8zm1 0h3v1H5V8zm7 0h3v1h-3V8z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M5 8h3v1H5V8zm7 0h3v1h-3V8z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 8v1h1V8H7zm7 0v1h1V8h-1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M3 7v1h1V7H3zm13 0v1h1V7h-1zM9 7v1h2V7H9z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`
-        ])
+        `<path d="M5 7h3v3H5V7zm7 0h3v3h-3V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 7h1v1H7V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M12 10V7h3v3h-3zm-1-4v1H9V6H4v1H3v1h1v3h5V8h2v3h5V8h1V7h-1V6h-5zm-6 4V7h3v3H5z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M3 7h1v1H3V7zm6 0h2v1H9V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M5 7h3v2H5V7zm7 0h3v2h-3V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 7h1v1H7V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M5 7v2h3V7H5zM4 6v1H3v1h1v1h1v1h3V9h1V8h2v1h1v1h3V9h1V8h1V7h-1V6h-5v1H9V6H4zm8 1v2h3V7h-3z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M3 7h1v1H3V7zm6 0h2v1H9V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M5 8h3v1H5V8zm7 0h3v1h-3V8z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 8h1v1H7V8zm7 0h1v1h-1V8z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M5 8v1h3V8H5zM3 7v1h1v1h1v1h3V9h1V8h2v1h1v1h3V9h1V8h1V7H3zm9 1v1h3V8h-3z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M3 7v1h1V7H3zm6 0v1h2V7H9zm7 0v1h1V7h-1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M5 7h3v2H5V7zm7 0h3v2h-3V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 7h1v1H7V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M12 7v2h3V7h-3zM8 6H5v1H3v1h1v1h1v1h3V9h1V8h2v1h1v1h3V9h1V8h1V7h-2V6h-3v1H8V6zM5 7v2h3V7H5z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M3 7h1v1H3V7zm6 0h2v1H9V7zm7 0h1v1h-1V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M4 8H3V7h1V6h5v1h2V6h5v1h1v1h-1v2h-5V8H9v2H4V8zm1 0V7h3v2H5V8zm7-1v2h3V7h-3z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M5 7h3v2H5V7zm7 0h3v2h-3V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M14 7h1v1h-1V7zM7 7h1v1H7V7z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M3 8V7h1v1H3zm6-1v1h2V7H9zm7 0v1h1V7h-1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M4 8H3V7h14v1h-1v2h-5V8H9v2H4V8zm1 0h3v1H5V8zm7 0h3v1h-3V8z" fill-rule="evenodd" fill="${glassesColor.hex}"/><path d="M5 8h3v1H5V8zm7 0h3v1h-3V8z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M7 8v1h1V8H7zm7 0v1h1V8h-1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/><path d="M3 7v1h1V7H3zm13 0v1h1V7h-1zM9 7v1h2V7H9z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`
+      ])
       : '',
     // Clothes
     random.pickone([
@@ -211,37 +271,37 @@ export default function(random: Random, options: Options = {}) {
     // Hair (95% chance)
     random.bool(95)
       ? random.pickone([
-          `<path d="M3 3v2h1V4h1V3h10v1h1v1h1V3h-1V2H4v1H3z" fill="${hairColor.hex}"/>`,
-          `<path d="M5 2h10v1h1v1h1v3h-1V6h-1V5h-1V4h-4v1H8v1H7v1H4V6H3V4h1V3h1V2z" fill="${hairColor.hex}"/>`,
-          `<path d="M3 6h1V4h1V3h2v1h1v1h4V4h1V3h2v1h1v2h1V4h-1V3h-1V2H5v1H4v1H3v2z" fill="${hairColor.hex}"/>`,
-          `<path d="M3 8h1V5h12v3h1V4h-1V3h-1V2H5v1H4v1H3v4z" fill="${hairColor.hex}"/>`,
-          `<path d="M2 4v1h1v1h2V4h1V2H4v1H3v1H2zm6-1h2v1h2V3h1V2H8v1zm6 1h1v2h2V5h1V4h-1V3h-1V2h-2v2z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
-          `<path d="M3 7h1V5h2V3h8v1h1v1h1v2h1V3h-2V2h-2V1h-1v1h-2V1H9v1H8V1H7v1H5v1H4v1H3v3z" fill="${hairColor.hex}"/>`,
-          `<path d="M8 2h4v1h-1v1H9V3H8V2z" fill="${hairColor.hex}"/>`,
-          `<path d="M9 0v1H8v1h4V1h-1V0H9z" fill="${hairColor.hex}"/>`,
-          `<path d="M3 7h1V5h2V4h2V3h1v1h2v1h2v1h2v1h2V4h-1V3h-1V2H5v1H4v1H3v3z" fill="${hairColor.hex}"/>`,
-          `<path d="M4 4h12V3h-1V2H5v1H4v1z" fill="${hairColor.hex}"/>`,
-          `<path d="M2 7h1V5h2V4h1V3h1v1h2V3h4V2h1v1h1v1h1v1h1v2h1V6h1V4h-1V3h-1V2h-1V1h-1V0h-1v1h-2V0h-1v1H9V0H8v1H7V0H5v1H4v1H2v5z" fill="${hairColor.hex}"/>`,
-          `<path d="M0 7h1v5h1v1h1V9h1V7h1V6h1V4h1V3h7v1h1v1h1v1h1v7h1v-2h1V7h-1V6h1V4h-1v1h-1V3h1V2h-1v1h-1V2h-2V1h-1V0h-1v1H5V0H4v1H3V0H2v1h1v2H2V2H1v1h1v1H1v2H0v1z" fill="${hairColor.hex}"/>`,
-          `<path d="M5 2v1H4v1H3v3h2V6h1V5h6V4h1V3h1v1h-1v1h1v1h1v1h2V4h-1V3h-1V2H5z" fill="${hairColor.hex}"/>`
-        ])
+        `<path d="M3 3v2h1V4h1V3h10v1h1v1h1V3h-1V2H4v1H3z" fill="${hairColor.hex}"/>`,
+        `<path d="M5 2h10v1h1v1h1v3h-1V6h-1V5h-1V4h-4v1H8v1H7v1H4V6H3V4h1V3h1V2z" fill="${hairColor.hex}"/>`,
+        `<path d="M3 6h1V4h1V3h2v1h1v1h4V4h1V3h2v1h1v2h1V4h-1V3h-1V2H5v1H4v1H3v2z" fill="${hairColor.hex}"/>`,
+        `<path d="M3 8h1V5h12v3h1V4h-1V3h-1V2H5v1H4v1H3v4z" fill="${hairColor.hex}"/>`,
+        `<path d="M2 4v1h1v1h2V4h1V2H4v1H3v1H2zm6-1h2v1h2V3h1V2H8v1zm6 1h1v2h2V5h1V4h-1V3h-1V2h-2v2z" fill-rule="evenodd" fill="${hairColor.hex}"/>`,
+        `<path d="M3 7h1V5h2V3h8v1h1v1h1v2h1V3h-2V2h-2V1h-1v1h-2V1H9v1H8V1H7v1H5v1H4v1H3v3z" fill="${hairColor.hex}"/>`,
+        `<path d="M8 2h4v1h-1v1H9V3H8V2z" fill="${hairColor.hex}"/>`,
+        `<path d="M9 0v1H8v1h4V1h-1V0H9z" fill="${hairColor.hex}"/>`,
+        `<path d="M3 7h1V5h2V4h2V3h1v1h2v1h2v1h2v1h2V4h-1V3h-1V2H5v1H4v1H3v3z" fill="${hairColor.hex}"/>`,
+        `<path d="M4 4h12V3h-1V2H5v1H4v1z" fill="${hairColor.hex}"/>`,
+        `<path d="M2 7h1V5h2V4h1V3h1v1h2V3h4V2h1v1h1v1h1v1h1v2h1V6h1V4h-1V3h-1V2h-1V1h-1V0h-1v1h-2V0h-1v1H9V0H8v1H7V0H5v1H4v1H2v5z" fill="${hairColor.hex}"/>`,
+        `<path d="M0 7h1v5h1v1h1V9h1V7h1V6h1V4h1V3h7v1h1v1h1v1h1v7h1v-2h1V7h-1V6h1V4h-1v1h-1V3h1V2h-1v1h-1V2h-2V1h-1V0h-1v1H5V0H4v1H3V0H2v1h1v2H2V2H1v1h1v1H1v2H0v1z" fill="${hairColor.hex}"/>`,
+        `<path d="M5 2v1H4v1H3v3h2V6h1V5h6V4h1V3h1v1h-1v1h1v1h1v1h2V4h-1V3h-1V2H5z" fill="${hairColor.hex}"/>`
+      ])
       : '',
     // Hat (5% chance)
     random.bool(5)
       ? random.pickone([
-          `<path d="M4 0v2H2v2h16V2h-2V0H4z" fill="${hatColor.hex}"/>`,
-          `<path d="M4 3H2v1h16V3h-2V0H4v3z" fill="${hatColor.hex}"/>`,
-          `<path d="M2 2v2h16V2h-1V1h-1V0H4v1H3v1H2z" fill="${hatColor.hex}"/>`,
-          `<path d="M6 0v1H5v1H4v2h14V3h-2V2h-1V1h-1V0H6z" fill="${hatColor.hex}"/>`,
-          `<path d="M2 4V2h2V0h12v2h2v2H2z" fill="${hatColor.hex}"/><path d="M4 0v2h12V0H4z" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M2 4V3h2V0h12v3h2v1H2z" fill="${hatColor.hex}"/><path d="M4 0v3h12V0H4z" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M2 4V2h1V1h1V0h12v1h1v1h1v2H2z" fill="${hatColor.hex}"/><path d="M3 1v1h14V1H3zM2 3v1h16V3H2z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M14 0H6v1H5v1H4v2h14V3h-2V2h-1V1h-1V0z" fill="${hatColor.hex}"/><path d="M5 3h1V2h1V1h1V0H7v1H6v1H5v1z" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M4 0v2H2v2h16V2h-2V0H4z" fill="${hatColor.hex}"/><path d="M15 3V0h-1v3h1z" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M4 0v3H2v1h16V3h-2V0H4z" fill="${hatColor.hex}"/><path d="M15 3V0h-1v3h1zm-2-3v2h-1V0h1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M2 2v2h16V2h-1V1h-1V0H4v1H3v1H2z" fill="${hatColor.hex}"/><path d="M15 0v4h-1V0h1zm-2 0v4h-1V0h1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
-          `<path d="M5 2H4v2h14V3h-2V2h-1V1h-1V0H6v1H5v1z" fill="${hatColor.hex}"/><path d="M14 2h-3v1h3V2z" fill="#FFF" fill-opacity=".2"/>`
-        ])
+        `<path d="M4 0v2H2v2h16V2h-2V0H4z" fill="${hatColor.hex}"/>`,
+        `<path d="M4 3H2v1h16V3h-2V0H4v3z" fill="${hatColor.hex}"/>`,
+        `<path d="M2 2v2h16V2h-1V1h-1V0H4v1H3v1H2z" fill="${hatColor.hex}"/>`,
+        `<path d="M6 0v1H5v1H4v2h14V3h-2V2h-1V1h-1V0H6z" fill="${hatColor.hex}"/>`,
+        `<path d="M2 4V2h2V0h12v2h2v2H2z" fill="${hatColor.hex}"/><path d="M4 0v2h12V0H4z" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M2 4V3h2V0h12v3h2v1H2z" fill="${hatColor.hex}"/><path d="M4 0v3h12V0H4z" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M2 4V2h1V1h1V0h12v1h1v1h1v2H2z" fill="${hatColor.hex}"/><path d="M3 1v1h14V1H3zM2 3v1h16V3H2z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M14 0H6v1H5v1H4v2h14V3h-2V2h-1V1h-1V0z" fill="${hatColor.hex}"/><path d="M5 3h1V2h1V1h1V0H7v1H6v1H5v1z" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M4 0v2H2v2h16V2h-2V0H4z" fill="${hatColor.hex}"/><path d="M15 3V0h-1v3h1z" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M4 0v3H2v1h16V3h-2V0H4z" fill="${hatColor.hex}"/><path d="M15 3V0h-1v3h1zm-2-3v2h-1V0h1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M2 2v2h16V2h-1V1h-1V0H4v1H3v1H2z" fill="${hatColor.hex}"/><path d="M15 0v4h-1V0h1zm-2 0v4h-1V0h1z" fill-rule="evenodd" fill="#FFF" fill-opacity=".2"/>`,
+        `<path d="M5 2H4v2h14V3h-2V2h-1V1h-1V0H6v1H5v1z" fill="${hatColor.hex}"/><path d="M14 2h-3v1h3V2z" fill="#FFF" fill-opacity=".2"/>`
+      ])
       : '',
     '</svg>'
   ].join('');

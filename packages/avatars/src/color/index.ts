@@ -3,6 +3,7 @@ import * as rgbToHsv from 'pure-color/convert/rgb2hsv';
 import * as rgbToHex from 'pure-color/convert/rgb2hex';
 import * as hsvToRgb from 'pure-color/convert/hsv2rgb';
 import collection from './collection';
+import { HTML } from './html';
 
 export interface ColorInterface {
   alpha: number;
@@ -14,6 +15,7 @@ export interface ColorInterface {
 
 export default class Color implements ColorInterface {
   public static collection = collection;
+  public static html = HTML;
 
   public alpha: number = 1;
 

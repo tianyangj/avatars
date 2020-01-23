@@ -1,0 +1,8 @@
+export const PINK = {
+    PINK: '#FFC0CB',
+    LIGHTPINK: '#FFB6C1',
+    HOTPINK: '#FF69B4',
+    DEEPPINK: '#FF1493',
+    MEDIUMVIOLETRED: '#C71585',
+    PALEVIOLETRED: '#DB7093'
+};

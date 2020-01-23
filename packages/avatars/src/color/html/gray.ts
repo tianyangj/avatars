@@ -1,0 +1,12 @@
+export const GRAY = {
+    GAINSBORO: '#DCDCDC',
+    LIGHTGRAY: '#D3D3D3',
+    SILVER: '#C0C0C0',
+    DARKGRAY: '#A9A9A9',
+    GRAY: '#808080',
+    DIMGRAY: '#696969',
+    LIGHTSLATEGRAY: '#778899',
+    SLATEGRAY: '#708090',
+    DARKSLATEGRAY: '#2F4F4F',
+    BLACK: '#000000'
+};
