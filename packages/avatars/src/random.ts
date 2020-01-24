@@ -18,13 +18,13 @@ export default class Random {
   bool(likelihood: number = 50) {
     if (!this.genes) {
       const temp = this.prng() * 100 < likelihood;
-      console.log('bool(prng)', temp);
+      // console.log('bool(prng)', temp);
       return temp;
     } else {
       if (this.genesIndex === 0) {
         // position first always determines gender, either male = 1 or female = 0
         const temp = Boolean(this.genes[this.genesIndex]);
-        console.log('bool(genes)', temp);
+        // console.log('bool(genes)', temp);
         this.genesIndex++;
         return temp;
       } else {
@@ -42,11 +42,11 @@ export default class Random {
   integer(min: number, max: number) {
     if (!this.genes) {
       const temp = Math.floor(this.prng() * (max - min + 1) + min);
-      console.log('integer(prng)', temp);
+      // console.log('integer(prng)', temp);
       return temp;
     } else {
       const temp = this.genes[this.genesIndex++];
-      console.log('integer(genes)', temp);
+      // console.log('integer(genes)', temp);
       return temp;
     }
   }
