@@ -5,155 +5,49 @@ type Options = {
   mood?: Array<'happy' | 'sad' | 'surprised'>;
 };
 
+function getWebColors(): Color[] {
+  function getColors(color: { [key: string]: string; }): Color[] {
+    return Object.keys(color).map(colorName => new Color(color[colorName]));
+  }
+  return [
+    ...getColors(Color.html.PINK),
+    ...getColors(Color.html.RED),
+    ...getColors(Color.html.ORANGE),
+    ...getColors(Color.html.YELLOW),
+    ...getColors(Color.html.BROWN),
+    ...getColors(Color.html.GREEN),
+    ...getColors(Color.html.CYAN),
+    ...getColors(Color.html.BLUE),
+    ...getColors(Color.html.PURPLE),
+    ...getColors(Color.html.WHITE),
+    ...getColors(Color.html.GRAY),
+  ];
+}
+
 export default function (random: Random, options: Options = {}) {
-  let skinColor = random.pickone([
-    new Color(Color.html.BROWN.CORNSILK),
-    new Color(Color.html.BROWN.BLANCHEDALMOND),
-    new Color(Color.html.BROWN.BISQUE),
-    new Color(Color.html.BROWN.NAVAJOWHITE),
-    new Color(Color.html.BROWN.WHEAT),
-    new Color(Color.html.BROWN.BURLYWOOD),
-    new Color(Color.html.BROWN.TAN),
-    new Color(Color.html.BROWN.ROSYBROWN),
-    new Color(Color.html.BROWN.SANDYBROWN),
-    new Color(Color.html.BROWN.GOLDENROD),
-    new Color(Color.html.BROWN.DARKGOLDENROD),
-    new Color(Color.html.BROWN.PERU),
-    new Color(Color.html.BROWN.CHOCOLATE),
-    new Color(Color.html.BROWN.SADDLEBROWN),
-    new Color(Color.html.BROWN.SIENNA),
-    new Color(Color.html.BROWN.BROWN),
-    new Color(Color.html.BROWN.MAROON),
-  ]);
 
-  let hairColor = random.pickone([
-    new Color(Color.html.GRAY.GAINSBORO),
-    new Color(Color.html.GRAY.LIGHTGRAY),
-    new Color(Color.html.GRAY.SILVER),
-    new Color(Color.html.GRAY.DARKGRAY),
-    new Color(Color.html.GRAY.GRAY),
-    new Color(Color.html.GRAY.DIMGRAY),
-    new Color(Color.html.GRAY.LIGHTSLATEGRAY),
-    new Color(Color.html.GRAY.SLATEGRAY),
-    new Color(Color.html.GRAY.DARKSLATEGRAY),
-    new Color(Color.html.GRAY.BLACK),
-  ]);
+  const webColors: Color[] = getWebColors();
 
-  let eyesColor = random.pickone([
-    new Color(Color.html.BLUE.AQUA),
-    new Color(Color.html.BLUE.CYAN),
-    new Color(Color.html.BLUE.LIGHTCYAN),
-    new Color(Color.html.BLUE.PALETURQUOISE),
-    new Color(Color.html.BLUE.AQUAMARINE),
-    new Color(Color.html.BLUE.TURQUOISE),
-    new Color(Color.html.BLUE.MEDIUMTURQUOISE),
-    new Color(Color.html.BLUE.DARKTURQUOISE),
-    new Color(Color.html.BLUE.CADETBLUE),
-    new Color(Color.html.BLUE.STEELBLUE),
-    new Color(Color.html.BLUE.LIGHTSTEELBLUE),
-    new Color(Color.html.BLUE.POWDERBLUE),
-    new Color(Color.html.BLUE.LIGHTBLUE),
-    new Color(Color.html.BLUE.SKYBLUE),
-    new Color(Color.html.BLUE.LIGHTSKYBLUE),
-    new Color(Color.html.BLUE.DEEPSKYBLUE),
-    new Color(Color.html.BLUE.DODGERBLUE),
-    new Color(Color.html.BLUE.CORNFLOWERBLUE),
-    new Color(Color.html.BLUE.MEDIUMSLATEBLUE),
-    new Color(Color.html.BLUE.ROYALBLUE),
-    new Color(Color.html.BLUE.BLUE),
-    new Color(Color.html.BLUE.MEDIUMBLUE),
-    new Color(Color.html.BLUE.DARKBLUE),
-    new Color(Color.html.BLUE.NAVY),
-    new Color(Color.html.BLUE.MIDNIGHTBLUE),
-  ]);
+  let skinColor = random.pickone(webColors);
+
+  let hairColor = random.pickone(webColors);
+
+  let eyesColor = random.pickone(webColors);
 
   let eyebrowsColor = hairColor
     .clone()
     .darkerThan(skinColor, 7)
     .darkerThan(hairColor, 10);
 
-  let mustacheColor = random.pickone([
-    new Color(Color.html.ORANGE.LIGHTSALMON),
-    new Color(Color.html.ORANGE.CORAL),
-    new Color(Color.html.ORANGE.TOMATO),
-    new Color(Color.html.ORANGE.ORANGERED),
-    new Color(Color.html.ORANGE.DARKORANGE),
-    new Color(Color.html.ORANGE.ORANGE),
-  ]);
+  let mustacheColor = random.pickone(webColors);
 
-  let mouthColor = random.pickone([
-    new Color(Color.html.RED.INDIANRED),
-    new Color(Color.html.RED.LIGHTSALMON),
-    new Color(Color.html.RED.SALMON),
-    new Color(Color.html.RED.DARKSALMON),
-    new Color(Color.html.RED.LIGHTSALMON),
-    new Color(Color.html.RED.CRIMSON),
-    new Color(Color.html.RED.RED),
-    new Color(Color.html.RED.FIREBRICK),
-    new Color(Color.html.RED.DARKRED),
-  ]);
+  let mouthColor = random.pickone(webColors);
 
-  let glassesColor = random.pickone([
-    new Color(Color.html.YELLOW.GOLD),
-    new Color(Color.html.YELLOW.YELLOW),
-    new Color(Color.html.YELLOW.LIGHTYELLOW),
-    new Color(Color.html.YELLOW.LEMONCHIFFON),
-    new Color(Color.html.YELLOW.LIGHTGOLDENRODYELLOW),
-    new Color(Color.html.YELLOW.PAPAYAWHIP),
-    new Color(Color.html.YELLOW.MOCCASIN),
-    new Color(Color.html.YELLOW.PEACHPUFF),
-    new Color(Color.html.YELLOW.PALEGOLDENROD),
-    new Color(Color.html.YELLOW.KHAKI),
-    new Color(Color.html.YELLOW.DARKKHAKI),
-  ]);
+  let glassesColor = random.pickone(webColors);
 
-  let clothesColor = random.pickone([
-    new Color(Color.html.GREEN.GREENYELLOW),
-    new Color(Color.html.GREEN.CHARTREUSE),
-    new Color(Color.html.GREEN.LAWNGREEN),
-    new Color(Color.html.GREEN.LIME),
-    new Color(Color.html.GREEN.LIMEGREEN),
-    new Color(Color.html.GREEN.PALEGREEN),
-    new Color(Color.html.GREEN.LIGHTGREEN),
-    new Color(Color.html.GREEN.MEDIUMSPRINGGREEN),
-    new Color(Color.html.GREEN.SPRINGGREEN),
-    new Color(Color.html.GREEN.MEDIUMSEAGREEN),
-    new Color(Color.html.GREEN.SEAGREEN),
-    new Color(Color.html.GREEN.FORESTGREEN),
-    new Color(Color.html.GREEN.GREEN),
-    new Color(Color.html.GREEN.DARKGREEN),
-    new Color(Color.html.GREEN.YELLOWGREEN),
-    new Color(Color.html.GREEN.OLIVEDRAB),
-    new Color(Color.html.GREEN.OLIVE),
-    new Color(Color.html.GREEN.DARKOLIVEGREEN),
-    new Color(Color.html.GREEN.MEDIUMAQUAMARINE),
-    new Color(Color.html.GREEN.DARKSEAGREEN),
-    new Color(Color.html.GREEN.LIGHTSEAGREEN),
-    new Color(Color.html.GREEN.DARKCYAN),
-    new Color(Color.html.GREEN.TEAL),
-  ]);
+  let clothesColor = random.pickone(webColors);
 
-  let hatColor = random.pickone([
-    new Color(Color.html.PURPLE.LAVENDER),
-    new Color(Color.html.PURPLE.THISTLE),
-    new Color(Color.html.PURPLE.PLUM),
-    new Color(Color.html.PURPLE.VIOLET),
-    new Color(Color.html.PURPLE.ORCHID),
-    new Color(Color.html.PURPLE.FUCHSIA),
-    new Color(Color.html.PURPLE.MAGENTA),
-    new Color(Color.html.PURPLE.MEDIUMORCHID),
-    new Color(Color.html.PURPLE.MEDIUMPURPLE),
-    new Color(Color.html.PURPLE.REBECCAPURPLE),
-    new Color(Color.html.PURPLE.BLUEVIOLET),
-    new Color(Color.html.PURPLE.DARKVIOLET),
-    new Color(Color.html.PURPLE.DARKORCHID),
-    new Color(Color.html.PURPLE.DARKMAGENTA),
-    new Color(Color.html.PURPLE.PURPLE),
-    new Color(Color.html.PURPLE.INDIGO),
-    new Color(Color.html.PURPLE.SLATEBLUE),
-    new Color(Color.html.PURPLE.DARKSLATEBLUE),
-    new Color(Color.html.PURPLE.MEDIUMSLATEBLUE),
-  ]);
+  let hatColor = random.pickone(webColors);
 
   let mouth = [];
 

@@ -1,5 +1,4 @@
 export const ORANGE = {
-    LIGHTSALMON: '#FFA07A',
     CORAL: '#FF7F50',
     TOMATO: '#FF6347',
     ORANGERED: '#FF4500',
