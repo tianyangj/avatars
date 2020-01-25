@@ -5,49 +5,128 @@ type Options = {
   mood?: Array<'happy' | 'sad' | 'surprised'>;
 };
 
-function getWebColors(): Color[] {
+type ColorOptions = {
+  pink?: boolean;
+  red?: boolean;
+  orange?: boolean;
+  yellow?: boolean;
+  brown?: boolean;
+  green?: boolean;
+  cyan?: boolean;
+  blue?: boolean;
+  purple?: boolean;
+  white?: boolean;
+  gray?: boolean;
+};
+
+function getWebColors(options: ColorOptions = {
+  pink: false,
+  red: false,
+  orange: false,
+  yellow: false,
+  brown: false,
+  green: false,
+  cyan: false,
+  blue: false,
+  purple: false,
+  white: false,
+  gray: false,
+}): Color[] {
   function getColors(color: { [key: string]: string; }): Color[] {
     return Object.keys(color).map(colorName => new Color(color[colorName]));
   }
   return [
-    ...getColors(Color.html.PINK),
-    ...getColors(Color.html.RED),
-    ...getColors(Color.html.ORANGE),
-    ...getColors(Color.html.YELLOW),
-    ...getColors(Color.html.BROWN),
-    ...getColors(Color.html.GREEN),
-    ...getColors(Color.html.CYAN),
-    ...getColors(Color.html.BLUE),
-    ...getColors(Color.html.PURPLE),
-    ...getColors(Color.html.WHITE),
-    ...getColors(Color.html.GRAY),
+    ...(options.pink ? getColors(Color.html.PINK) : []),
+    ...(options.red ? getColors(Color.html.RED) : []),
+    ...(options.orange ? getColors(Color.html.ORANGE) : []),
+    ...(options.yellow ? getColors(Color.html.YELLOW) : []),
+    ...(options.brown ? getColors(Color.html.BROWN) : []),
+    ...(options.green ? getColors(Color.html.GREEN) : []),
+    ...(options.cyan ? getColors(Color.html.CYAN) : []),
+    ...(options.blue ? getColors(Color.html.BLUE) : []),
+    ...(options.purple ? getColors(Color.html.PURPLE) : []),
+    ...(options.white ? getColors(Color.html.WHITE) : []),
+    ...(options.gray ? getColors(Color.html.GRAY) : []),
   ];
 }
 
 export default function (random: Random, options: Options = {}) {
 
-  const webColors: Color[] = getWebColors();
+  let skinColor = random.pickone(
+    getWebColors({
+      brown: true,
+      white: true
+    })
+  );
 
-  let skinColor = random.pickone(webColors);
+  let hairColor = random.pickone(
+    getWebColors({
+      gray: true,
+      red: true,
+      yellow: true,
+      brown: true
+    })
+  );
 
-  let hairColor = random.pickone(webColors);
-
-  let eyesColor = random.pickone(webColors);
+  let eyesColor = random.pickone(
+    getWebColors({
+      green: true,
+      blue: true,
+      cyan: true,
+      yellow: true,
+      brown: true
+    })
+  );
 
   let eyebrowsColor = hairColor
     .clone()
     .darkerThan(skinColor, 7)
     .darkerThan(hairColor, 10);
 
-  let accessoriesColor = random.pickone(webColors);
+  let accessoriesColor = random.pickone(
+    getWebColors({
+      pink: true
+    })
+  );
 
-  let mouthColor = random.pickone(webColors);
+  let mouthColor = random.pickone(
+    getWebColors({
+      red: true
+    })
+  );
 
-  let glassesColor = random.pickone(webColors);
+  let glassesColor = random.pickone(
+    getWebColors({
+      red: true,
+      green: true,
+      blue: true,
+      cyan: true,
+      yellow: true,
+      purple: true
+    })
+  );
 
-  let clothesColor = random.pickone(webColors);
+  let clothesColor = random.pickone(
+    getWebColors({
+      red: true,
+      green: true,
+      blue: true,
+      cyan: true,
+      yellow: true,
+      purple: true
+    })
+  );
 
-  let hatColor = random.pickone(webColors);
+  let hatColor = random.pickone(
+    getWebColors({
+      red: true,
+      green: true,
+      blue: true,
+      cyan: true,
+      yellow: true,
+      purple: true
+    })
+  );
 
   let mouth = [];
 
