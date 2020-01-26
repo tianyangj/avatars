@@ -124,6 +124,12 @@ export default function (random: Random, options: Options = {}) {
     })
   );
 
+  let backgroundColor = random.pickone(
+    getWebColors({
+      white: true
+    })
+  );
+
   let mouth = [];
 
   while (mouth.length === 0) {
@@ -165,6 +171,8 @@ export default function (random: Random, options: Options = {}) {
   // prettier-ignore
   return [
     '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 20 20" version="1.1" shape-rendering="crispEdges">',
+    // Background
+    `<rect fill="${backgroundColor.hex}" width="100%" height="100%" x="0" y="0"></rect>`,
     // Head
     `<path d="M8 15v1H4v1H3v3h14v-3h-1v-1h-4v-1h3v-1h1v-1h1v-3h1V7h-1V4h-1V3h-1V2H5v1H4v1H3v3H2v3h1v3h1v1h1v1h3z" fill="${skinColor.hex}"/><path d="M5 15v-1H4v-1H3v-3H2V7h1V4h1V3h1V2h10v1h1v1h1v3h1v3h-1v3h-1v1h-1v1H5z" fill="#FFF" fill-opacity=".1"/>`,
     // Eyes
