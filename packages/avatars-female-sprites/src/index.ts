@@ -54,8 +54,7 @@ export default function (random: Random, options: Options = {}) {
 
   let skinColor = random.pickone(
     getWebColors({
-      brown: true,
-      white: true
+      brown: true
     })
   );
 
@@ -63,8 +62,7 @@ export default function (random: Random, options: Options = {}) {
     getWebColors({
       gray: true,
       red: true,
-      yellow: true,
-      brown: true
+      yellow: true
     })
   );
 
@@ -72,9 +70,7 @@ export default function (random: Random, options: Options = {}) {
     getWebColors({
       green: true,
       blue: true,
-      cyan: true,
-      yellow: true,
-      brown: true
+      cyan: true
     })
   );
 
@@ -91,16 +87,14 @@ export default function (random: Random, options: Options = {}) {
 
   let mouthColor = random.pickone(
     getWebColors({
-      red: true
+      purple: true
     })
   );
 
   let glassesColor = random.pickone(
     getWebColors({
+      gray: true,
       red: true,
-      green: true,
-      blue: true,
-      cyan: true,
       yellow: true,
       purple: true
     })
@@ -108,23 +102,25 @@ export default function (random: Random, options: Options = {}) {
 
   let clothesColor = random.pickone(
     getWebColors({
-      red: true,
+      orange: true,
       green: true,
       blue: true,
       cyan: true,
-      yellow: true,
-      purple: true
+      pink: true
     })
   );
 
   let hatColor = random.pickone(
     getWebColors({
+      gray: true,
       red: true,
+      yellow: true,
+      purple: true,
+      orange: true,
       green: true,
       blue: true,
       cyan: true,
-      yellow: true,
-      purple: true
+      pink: true
     })
   );
 
