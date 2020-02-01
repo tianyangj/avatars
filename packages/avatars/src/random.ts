@@ -29,7 +29,7 @@ export default class Random {
         return temp;
       } else {
         // position afterwards should always follow bool => pickone sequence if not null
-        if (this.genes[this.genesIndex] === null) {
+        if (this.genes[this.genesIndex] === 0) {
           this.genesIndex++;
           return false;
         } else {
@@ -45,7 +45,9 @@ export default class Random {
       // console.log('integer(prng)', temp);
       return temp;
     } else {
-      const temp = this.genes[this.genesIndex++];
+      // genes are 1 based, 0 means null
+      const temp = this.genes[this.genesIndex] - 1;
+      this.genesIndex++;
       // console.log('integer(genes)', temp);
       return temp;
     }
